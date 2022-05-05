@@ -4,12 +4,13 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 import logo from "./logo.png";
+import CustomLink from "../../../utilities/CustomLink";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Inventory", to: "/inventory" },
+  { name: "Manage", to: "/manage" },
+  { name: "Add", to: "addItems" },
+  { name: "My Items", to: "myItems" },
 ];
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -36,33 +37,38 @@ const Navbar = () => {
                 </div>
                 <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="flex-shrink-0 flex items-center">
-                    <img
-                      className="block lg:hidden h-8 w-auto"
-                      src={logo}
-                      alt="warehouse logo"
-                    />
-                    <img
-                      className="hidden lg:block h-8 w-auto"
-                      src={logo}
-                      alt="warehouse logo"
-                    />
+                    <Link to="/">
+                      <img
+                        className="block lg:hidden h-8 w-auto"
+                        src={logo}
+                        alt="warehouse logo"
+                      />
+                    </Link>
+                    <Link to="/">
+                      <img
+                        className="hidden lg:block h-8 w-auto"
+                        src={logo}
+                        alt="warehouse logo"
+                      />
+                    </Link>
                   </div>
                   <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
                       {navigation.map((item) => (
-                        <a
+                        <CustomLink
                           key={item.name}
-                          href={item.href}
+                          to={item.to}
                           className={classNames(
                             item.current
                               ? "bg-gray-900 text-white"
                               : "text-gray-300 hover:bg-gray-700 hover:text-white",
                             "px-3 py-2 rounded-md text-sm font-medium"
                           )}
-                          aria-current={item.current ? "page" : undefined}
+                          //   aria-current={item.current ? "page" : undefined}
+                          aria-current="page"
                         >
                           {item.name}
-                        </a>
+                        </CustomLink>
                       ))}
                     </div>
                   </div>
