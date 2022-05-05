@@ -9,7 +9,8 @@ function CustomLink({ children, to, ...props }) {
     <div className="font-semibold">
       <Link
         style={{
-          textDecoration: match ? "underline" : "",
+          color: match ? "white" : "",
+          background: match ? "#4a5568" : "",
         }}
         to={to}
         {...props}
