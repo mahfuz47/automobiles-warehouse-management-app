@@ -1,9 +1,10 @@
 import React from "react";
+import Cars from "../../Shared/Cars/Cars";
 
 const Inventory = () => {
   return (
     <div>
-      <h2>This is Inventory</h2>
+      <Cars></Cars>
     </div>
   );
 };
