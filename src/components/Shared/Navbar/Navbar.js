@@ -9,8 +9,9 @@ import CustomLink from "../../../utilities/CustomLink";
 const navigation = [
   { name: "Inventory", to: "/inventory" },
   { name: "Manage", to: "/manage" },
-  { name: "Add", to: "addItems" },
-  { name: "My Items", to: "myItems" },
+  { name: "Add", to: "/addItems" },
+  { name: "My Items", to: "/myItems" },
+  { name: "Blogs", to: "/blogs" },
 ];
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
