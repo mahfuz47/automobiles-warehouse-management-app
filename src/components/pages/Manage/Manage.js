@@ -5,8 +5,23 @@ import useCars from "../../../Hooks/useCars";
 import "./Manage.css";
 
 const Manage = () => {
-  const [cars] = useCars();
+  const [cars, setCars] = useCars();
 
+  const handleDeleteCars = (id) => {
+    const proceed = window.confirm(`Are you sure to delete ${cars.carName}?`);
+    if (proceed) {
+      const url = `https://floating-fortress-93057.herokuapp.com/cars/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const remaining = cars.filter((car) => car._id !== id);
+          setCars(remaining);
+        });
+    }
+  };
   return (
     <div>
       <table>
@@ -26,9 +41,12 @@ const Manage = () => {
               />
             </td>
             <td>{car.carName}</td>
-            <td className="text-center">{car.performance.quantity}</td>
+            <td className="text-center">{car?.performance?.quantity}</td>
             <td className="text-center">
-              <button className="bg-red-500 hover:bg-red-700 rounded-xl py-1 px-3">
+              <button
+                onClick={() => handleDeleteCars(car._id)}
+                className="bg-red-500 hover:bg-red-700 rounded-xl py-1 px-3"
+              >
                 DELETE
               </button>
             </td>

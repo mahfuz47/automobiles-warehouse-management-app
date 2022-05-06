@@ -25,15 +25,15 @@ const Cars = () => {
                 <div key={car._id} className="group relative">
                   <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
                     <img
-                      src={car.image}
-                      alt={car.carName}
+                      src={car?.image}
+                      alt={car?.carName}
                       className="w-full h-full object-center object-cover"
-                      title={car.carNname}
+                      title={car?.carNname}
                     />
                   </div>
                   <div className="flex items-center justify-between px-4">
                     <h3 className="mt-6 text-xl font-bold font-mono text-slate-900">
-                      <a href="/cars/:id">{car.carName}</a>
+                      <a href="/cars/:id">{car?.carName}</a>
                     </h3>
                     <div>
                       <button

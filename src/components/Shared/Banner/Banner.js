@@ -4,7 +4,7 @@ const Banner = () => {
     <div className="relative bg-gray-200 py-24 overflow-hidden">
       <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
-          <div className="xs:max-w-lg">
+          <div>
             <h1 className="text-3xl font font-extrabold tracking-tight text-gray-800 sm:text-4xl">
               WELCOME TO{" "}
             </h1>

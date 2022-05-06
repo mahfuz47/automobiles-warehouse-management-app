@@ -6,12 +6,9 @@ const useCars = () => {
     const url = `https://floating-fortress-93057.herokuapp.com/cars`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => {
-        setCars(data);
-        // console.log(data);
-      });
+      .then((data) => setCars(data));
   }, []);
-
+  console.log(cars);
   return [cars, setCars];
 };
 
