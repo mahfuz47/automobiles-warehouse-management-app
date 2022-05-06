@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import useCars from "../../../Hooks/useCars";
 
 const Cars = () => {
   const [cars] = useCars();
-  console.log(cars);
+
+  const navigate = useNavigate();
+
+  const navigateTocarDetails = (id) => {
+    navigate(`/cars/${id}`);
+  };
+  // console.log(cars);
   return (
     <div>
       <div className="bg-gray-100">
@@ -24,13 +31,20 @@ const Cars = () => {
                       title={car.carNname}
                     />
                   </div>
-                  <div className="flex items-center gap-x-24">
-                    <h3 className="mt-6 text-xl font-bold font-mono text-slate-900 px-2">
+                  <div className="flex items-center justify-between px-4">
+                    <h3 className="mt-6 text-xl font-bold font-mono text-slate-900">
                       <a href="/cars/:id">{car.carName}</a>
                     </h3>
-                    <button className="bg-emerald-400 rounded-xl px-3 py-1 font-bold mt-6 hover:bg-emerald-600">
-                      UPDATE
-                    </button>
+                    <div>
+                      <button
+                        onClick={() => {
+                          navigateTocarDetails(car._id);
+                        }}
+                        className="bg-indigo-600 rounded-xl px-3 py-1 font-bold mt-6 hover:bg-indigo-800 text-white hover:text-black"
+                      >
+                        UPDATE
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}

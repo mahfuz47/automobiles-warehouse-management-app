@@ -9,6 +9,7 @@ import Inventory from "./components/pages/Inventory/Inventory";
 import Manage from "./components/pages/Manage/Manage";
 import MyItems from "./components/pages/MyItems/MyItems";
 import PageNotFound from "./components/pages/PageNotFound/PageNotFound";
+import UpdateItem from "./components/pages/UpdateItem/UpdateItem";
 import Footer from "./components/Shared/Footer/Footer";
 import Header from "./components/Shared/Header/Header";
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/myItems" element={<MyItems></MyItems>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/cars/:carsId" element={<UpdateItem></UpdateItem>}></Route>
         <Route
           path="/registration"
           element={<Registration></Registration>}
