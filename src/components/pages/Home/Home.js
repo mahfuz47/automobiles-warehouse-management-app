@@ -1,10 +1,12 @@
 import React from "react";
 import Banner from "../../Shared/Banner/Banner";
+import Inventory from "../Inventory/Inventory";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
+      <Inventory></Inventory>
     </div>
   );
 };
