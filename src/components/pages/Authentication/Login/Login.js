@@ -1,8 +1,54 @@
 import { LockClosedIcon } from "@heroicons/react/outline";
-import React from "react";
+import React, { useState } from "react";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import auth from "../../../../firebase.init";
+import Loading from "../../../../utilities/Loading";
 import SocialLogin from "../../../Shared/SocialLogin/SocialLogin";
 import logo from "./logo.png";
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  let errorElement;
+  if (loading || sending) {
+    return <Loading></Loading>;
+  }
+
+  const navigateToRegister = () => {
+    navigate("/registration");
+  };
+
+  if (error) {
+    errorElement = <p className="text-red-600">Error: {error?.message}</p>;
+  }
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
+
+  const handleUserSignIn = (event) => {
+    event.preventDefault();
+    signInWithEmailAndPassword(email, password);
+  };
+  const handleResetPassword = async () => {
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Email has been send");
+    } else {
+      toast("please enter your email address");
+    }
+  };
   return (
     <div>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -13,7 +59,7 @@ const Login = () => {
               Sign in to your account
             </h2>
           </div>
-          <form className="mt-8 space-y-6" action="#" method="POST">
+          <form onSubmit={handleUserSignIn} className="mt-8 space-y-6">
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
@@ -24,6 +70,7 @@ const Login = () => {
                   id="email-address"
                   name="email"
                   type="email"
+                  onBlur={(e) => setEmail(e.target.value)}
                   autoComplete="email"
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -38,6 +85,7 @@ const Login = () => {
                   id="password"
                   name="password"
                   type="password"
+                  onBlur={(e) => setPassword(e.target.value)}
                   autoComplete="current-password"
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
@@ -63,21 +111,21 @@ const Login = () => {
               </div>
 
               <div className="text-sm">
-                <a
-                  href="/registration"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
+                <button
+                  onClick={handleResetPassword}
+                  className="font-medium text-indigo-600 hover:text-indigo-500 no-underline"
                 >
                   Forgot your password?
-                </a>
+                </button>
               </div>
             </div>
             <div className="text-sm">
-              <a
-                href="/registration"
+              <button
+                onClick={navigateToRegister}
                 className="font-medium text-indigo-600 hover:text-indigo-500"
               >
                 New to Automobiles?
-              </a>
+              </button>
             </div>
             <div>
               <button
@@ -93,6 +141,7 @@ const Login = () => {
                 Sign in
               </button>
             </div>
+            {errorElement}
             <div className="flex justify-center items-center py-3">
               <div className="bg-gray-500 w-32 h-px"></div>
               <p className="text-lg px-2 font-serif font-bold text-indigo-500">

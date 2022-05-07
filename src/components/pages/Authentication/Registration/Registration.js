@@ -1,25 +1,31 @@
 import React from "react";
-import SocialLogin from "../../../Shared/SocialLogin/SocialLogin";
+import { Link, useNavigate } from "react-router-dom";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
+import Loading from "../../../../utilities/Loading";
+import SocialLogin from "../../../Shared/SocialLogin/SocialLogin";
+import { toast, ToastContainer } from "react-toastify";
 import logo from "./logo.png";
 import auth from "../../../../firebase.init";
-import { toast, ToastContainer } from "react-toastify";
-import Loading from "../../../../utilities/Loading";
 
 const Registration = () => {
+  const [createUserWithEmailAndPassword, user, loading] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating] = useUpdateProfile(auth);
-  const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
-  console.log(user);
-  if (error) {
-    toast("Please Try Again");
-  }
+  const navigate = useNavigate();
+
+  const navigateLogin = () => {
+    navigate("/login");
+  };
 
   if (loading || updating) {
     return <Loading></Loading>;
+  }
+
+  if (user) {
+    navigate("/", { replace: true });
   }
 
   const handleRegisterUser = async (event) => {
@@ -27,13 +33,10 @@ const Registration = () => {
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    // const agree = event.target.terms.checked;
-
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
-    toast("Registered profile");
+    toast("Profile Updated");
   };
-
   return (
     <div>
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -47,50 +50,59 @@ const Registration = () => {
           <form onSubmit={handleRegisterUser}>
             <div className="mt-4">
               <div className="mt-4">
-                <label className="block" for="name">
+                <label className="block" htmlFor="name">
                   Name
                 </label>
                 <input
                   type="text"
-                  name="name"
                   placeholder="Name"
+                  autoComplete="name"
+                  name="name"
                   required
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                 ></input>
               </div>
               <div className="mt-4">
-                <label className="block" for="email">
+                <label className="block" htmlFor="email">
                   Email
                 </label>
                 <input
                   type="email"
-                  name="email"
                   placeholder="Email"
+                  autoComplete="email"
+                  name="email"
                   required
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                 ></input>
               </div>
               <div className="mt-4">
-                <label className="block">Password</label>
+                <label className="block" htmlFor="password">
+                  Password
+                </label>
                 <input
                   type="password"
                   name="password"
                   placeholder="Password"
+                  required
                   className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
                 ></input>
               </div>
-              <div className="mt-5 text-grey-dark">
-                Already have an account?
-                <a className="text-blue-600 hover:underline" href="/login">
-                  Log in
-                </a>
+              <div className="mt-5 text-indigo-700">
+                <Link
+                  to="/login"
+                  className="text-primary pe-auto text-decoration-none"
+                  onClick={navigateLogin}
+                >
+                  Already have an account?
+                </Link>
               </div>
               <div className="flex">
-                <input
+                <button
                   type="submit"
-                  value="Create Account"
                   className="w-full px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900"
-                ></input>
+                >
+                  Create Account
+                </button>
               </div>
 
               <div>
