@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import useCars from "../../../Hooks/useCars";
 
@@ -6,10 +7,14 @@ import "./Manage.css";
 
 const Manage = () => {
   const [cars, setCars] = useCars();
+  const navigate = useNavigate();
 
+  const navigateTocarDetails = (id) => {
+    navigate(`/cars/${id}`);
+  };
   const handleDeleteCars = (id) => {
-    const proceed = window.confirm(`Are you sure to delete ${cars.carName}?`);
-    if (proceed) {
+    const proceedDelete = window.confirm("Are you sure to delete?");
+    if (proceedDelete) {
       const url = `https://floating-fortress-93057.herokuapp.com/cars/${id}`;
       fetch(url, {
         method: "DELETE",
@@ -36,19 +41,29 @@ const Manage = () => {
             <td className="p-0 flex justify-center">
               <img
                 className="w-24 h-18  rounded-xl"
-                src={car.image}
-                alt={car.carName}
+                src={car?.image}
+                alt={car?.carName}
               />
             </td>
             <td>{car.carName}</td>
             <td className="text-center">{car?.performance?.quantity}</td>
-            <td className="text-center">
-              <button
-                onClick={() => handleDeleteCars(car._id)}
-                className="bg-red-500 hover:bg-red-700 rounded-xl py-1 px-3"
-              >
-                DELETE
-              </button>
+            <td className="px-0">
+              <div className="flex justify-evenly">
+                <button
+                  onClick={() => handleDeleteCars(car._id)}
+                  className="bg-red-500 hover:bg-red-700  rounded-xl px-3 py-1 font-bold"
+                >
+                  DELETE
+                </button>
+                <button
+                  onClick={() => {
+                    navigateTocarDetails(car._id);
+                  }}
+                  className="bg-green-500 rounded-xl px-3 py-1 font-bold hover:bg-green-600 text-white hover:text-black"
+                >
+                  UPDATE
+                </button>
+              </div>
             </td>
           </tr>
         ))}
