@@ -4,7 +4,6 @@ import Title from "../../Shared/Title/Title";
 
 const UpdateItem = () => {
   const { carsId } = useParams();
-  const [quantity, setQuantity] = useState();
   const [carDetails, setCarDetails] = useState({});
 
   useEffect(() => {
@@ -14,22 +13,22 @@ const UpdateItem = () => {
       .then((data) => setCarDetails(data));
   }, [carsId]);
 
-  const handleDelivered = () => {
-    const quantityData = parseInt(carDetails.quantity);
-    const quantity = quantityData > 0 ? quantityData - 1 : quantityData;
-    const updateItem = { quantity };
-    fetch(`http://localhost:5000/cars/${carDetails._id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(updateItem),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setQuantity(data);
-      });
-  };
+  // const handleDelivered = (id) => {
+  //   const quantityData = parseInt(carDetails.quantity);
+  //   const quantity = quantityData > 0 ? quantityData - 1 : quantityData;
+  //   const updateItem = { quantity };
+  //   fetch(`http://localhost:5000/cars/${id}`, {
+  //     method: "PATCH",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(updateItem),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setQuantity(data);
+  //     });
+  // };
   console.log(carDetails.quantity);
   return (
     <div>
@@ -47,13 +46,13 @@ const UpdateItem = () => {
                   type="number"
                   name="quantity"
                   id="quantity"
-                  value={quantity}
+                  value={carDetails.quantity}
                 />
               </div>
             </div>
             <div>
               <button
-                onClick={handleDelivered}
+                // onClick={handleDelivered}
                 className="bg-green-400 hover:bg-green-700 rounded-xl px-3 py-1"
               >
                 Delivered
