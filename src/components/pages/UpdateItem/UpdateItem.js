@@ -3,7 +3,12 @@ import { useParams } from "react-router-dom";
 
 const UpdateItem = () => {
   const { carsId } = useParams();
+  const [quantity, setQuantity] = useState();
   const [carDetails, setCarDetails] = useState({});
+
+  // const { performance } = carDetails;
+  // console.log(performance);
+  // const { quantity } = performance;
   // const [update, setUpdate] = useState();
   //-------------------
   //   getting data
@@ -20,13 +25,15 @@ const UpdateItem = () => {
   // useEffect(() => {
   //   axios.patch();
   // }, []);
+  // let quantity = carDetails.performance.quantity;
+  // const handleQuantityPlus = () => {};
 
-  // const handleQuantityPlus = (event) => {
-  //   const quantity = event.target.quantity.value;
-  //   const plus = parseInt(quantity) + 1;
-  //   console.log(plus);
-  //   return plus;
-  // };
+  const handleQuantityPlus = () => {
+    let quantityData = carDetails.performance.quantity;
+    setQuantity(quantityData);
+    const plus = parseInt(quantity) + 1;
+    console.log(plus);
+  };
 
   return (
     <div>
@@ -35,47 +42,23 @@ const UpdateItem = () => {
         <div className="py-5">
           <img className="w-full rounded-xl" src={carDetails?.image} alt="" />
           <div className="flex justify-between items-center px-2">
-            <p className="text-lg font-bold p-0 m-0">AVAILAVLE QUANTITY:</p>
-            <div className="flex items-center space-x-2 my-3">
-              <button>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 bg-slate-400 rounded"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-              <input
-                className="text-center pl-3 w-14 font-bold rounded bg-gray-800 text-white"
-                type="number"
-                name="quantity"
-                id="quantity"
-                readOnly
-                value={carDetails?.performance?.quantity}
-              />
-              <button>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 bg-slate-400 rounded"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
+            <div className="flex items-center space-x-3">
+              <p className="text-lg font-bold p-0 m-0">AVAILAVLE QUANTITY:</p>
+              <div className=" my-3">
+                <input
+                  className="text-center pl-3 w-14 font-bold rounded bg-gray-300 text-gray-700"
+                  type="number"
+                  name="quantity"
+                  id="quantity"
+                  value={quantity}
+                />
+              </div>
             </div>
             <div>
-              <button className="bg-green-400 hover:bg-green-700 rounded-xl px-3 py-1">
+              <button
+                onClick={handleQuantityPlus}
+                className="bg-green-400 hover:bg-green-700 rounded-xl px-3 py-1"
+              >
                 Delivered
               </button>
             </div>
