@@ -99,7 +99,7 @@ const Navbar = () => {
                       )}
                       <CustomLink
                         className="bg-gray-800 rounded-xl text-gray-300 hover:bg-gray-600 px-3 py-2"
-                        to=""
+                        to="/blogs"
                         aria-current="page"
                       >
                         Blogs
