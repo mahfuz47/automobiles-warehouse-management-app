@@ -14,3 +14,6 @@
 - React firebase hooks
 - Tailwind Css framwork
 - Custom Links
+- Google Login
+- Github Login
+- Email verification

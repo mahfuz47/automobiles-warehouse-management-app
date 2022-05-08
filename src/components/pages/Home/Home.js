@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "../../Shared/Banner/Banner";
 import Countries from "../../Shared/Countries/Countries";
 import Title from "../../Shared/Title/Title";
+import TopSold from "../../Shared/TopSoldSlider/TopSold";
 import Inventory from "../Inventory/Inventory";
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
       <Banner></Banner>
       <Inventory></Inventory>
       <Countries></Countries>
+      <TopSold></TopSold>
     </div>
   );
 };
