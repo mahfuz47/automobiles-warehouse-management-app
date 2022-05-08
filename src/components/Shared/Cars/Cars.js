@@ -4,7 +4,6 @@ import useCars from "../../../Hooks/useCars";
 
 const Cars = () => {
   const [cars] = useCars();
-
   const navigate = useNavigate();
 
   const navigateTocarDetails = (id) => {

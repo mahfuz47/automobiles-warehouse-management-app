@@ -12,6 +12,7 @@ import PageNotFound from "./components/pages/PageNotFound/PageNotFound";
 import UpdateItem from "./components/pages/UpdateItem/UpdateItem";
 import Footer from "./components/Shared/Footer/Footer";
 import Header from "./components/Shared/Header/Header";
+import RequireAuth from "./components/Shared/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -20,12 +21,26 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/inventory" element={<Inventory></Inventory>}></Route>
-        <Route path="/manage" element={<Manage></Manage>}></Route>
+        <Route
+          path="/manage"
+          element={
+            <RequireAuth>
+              <Manage></Manage>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/addItems" element={<AddItems></AddItems>}></Route>
         <Route path="/myItems" element={<MyItems></MyItems>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/cars/:carsId" element={<UpdateItem></UpdateItem>}></Route>
+        <Route
+          path="/cars/:carsId"
+          element={
+            <RequireAuth>
+              <UpdateItem></UpdateItem>
+            </RequireAuth>
+          }
+        ></Route>
         <Route
           path="/registration"
           element={<Registration></Registration>}

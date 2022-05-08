@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
+  useAuthState,
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
@@ -11,7 +12,8 @@ import logo from "./logo.png";
 import auth from "../../../../firebase.init";
 
 const Registration = () => {
-  const [createUserWithEmailAndPassword, user, loading] =
+  const [user] = useAuthState(auth);
+  const [createUserWithEmailAndPassword, loading] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating] = useUpdateProfile(auth);
   const navigate = useNavigate();
@@ -35,7 +37,7 @@ const Registration = () => {
     const password = event.target.password.value;
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
-    toast("Profile Updated");
+    toast("Verification Email has been sent");
   };
   return (
     <div>
@@ -119,7 +121,7 @@ const Registration = () => {
           </form>
         </div>
       </div>
-      <ToastContainer></ToastContainer>
+      <ToastContainer />
     </div>
   );
 };

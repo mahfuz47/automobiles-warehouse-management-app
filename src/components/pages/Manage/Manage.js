@@ -1,14 +1,22 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import auth from "../../../firebase.init";
 
 import useCars from "../../../Hooks/useCars";
-
 import "./Manage.css";
 
 const Manage = () => {
+  const [user] = useAuthState(auth);
   const [cars, setCars] = useCars();
   const navigate = useNavigate();
 
+  if (user) {
+    toast("Login Successful");
+  } else {
+    toast("Please Login");
+  }
   const navigateTocarDetails = (id) => {
     navigate(`/cars/${id}`);
   };
@@ -68,6 +76,7 @@ const Manage = () => {
           </tr>
         ))}
       </table>
+      <ToastContainer />
     </div>
   );
 };

@@ -5,7 +5,7 @@ import {
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import auth from "../../../../firebase.init";
 import Loading from "../../../../utilities/Loading";
 import SocialLogin from "../../../Shared/SocialLogin/SocialLogin";
@@ -35,6 +35,7 @@ const Login = () => {
 
   if (user) {
     navigate(from, { replace: true });
+    toast("login successful");
   }
 
   const handleUserSignIn = (event) => {
@@ -153,6 +154,7 @@ const Login = () => {
           </form>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
