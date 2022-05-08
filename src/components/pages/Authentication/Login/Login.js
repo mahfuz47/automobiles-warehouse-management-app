@@ -9,6 +9,7 @@ import { toast, ToastContainer } from "react-toastify";
 import auth from "../../../../firebase.init";
 import Loading from "../../../../utilities/Loading";
 import SocialLogin from "../../../Shared/SocialLogin/SocialLogin";
+import Title from "../../../Shared/Title/Title";
 import logo from "./logo.png";
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -52,6 +53,7 @@ const Login = () => {
   };
   return (
     <div>
+      <Title title={"Login"}></Title>
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>

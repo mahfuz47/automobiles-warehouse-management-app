@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Title from "../../Shared/Title/Title";
 
 const UpdateItem = () => {
   const { carsId } = useParams();
   const [quantity, setQuantity] = useState();
   const [carDetails, setCarDetails] = useState({});
-
-  // const { performance } = carDetails;
-  // console.log(performance);
-  // const { quantity } = performance;
-  // const [update, setUpdate] = useState();
-  //-------------------
-  //   getting data
-  //------------------
 
   useEffect(() => {
     const url = `https://floating-fortress-93057.herokuapp.com/cars/${carsId}`;
@@ -20,23 +13,27 @@ const UpdateItem = () => {
       .then((res) => res.json())
       .then((data) => setCarDetails(data));
   }, [carsId]);
-  //   console.log(update);
 
-  // useEffect(() => {
-  //   axios.patch();
-  // }, []);
-  // let quantity = carDetails.performance.quantity;
-  // const handleQuantityPlus = () => {};
-
-  const handleQuantityPlus = () => {
-    let quantityData = carDetails.quantity;
-    setQuantity(quantityData);
-    const plus = parseInt(quantity) + 1;
-    console.log(plus);
+  const handleDelivered = () => {
+    const quantityData = parseInt(carDetails.quantity);
+    const quantity = quantityData > 0 ? quantityData - 1 : quantityData;
+    const updateItem = { quantity };
+    fetch(`http://localhost:5000/cars/${carDetails._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setQuantity(data);
+      });
   };
-
+  console.log(carDetails.quantity);
   return (
     <div>
+      <Title title={"Update"}></Title>
       <h1>UPDATE :{carDetails._id}</h1>
       <div className="grid grid-cols-2 items-center space-x-4 gap-y-4">
         <div className="py-5">
@@ -56,7 +53,7 @@ const UpdateItem = () => {
             </div>
             <div>
               <button
-                onClick={handleQuantityPlus}
+                onClick={handleDelivered}
                 className="bg-green-400 hover:bg-green-700 rounded-xl px-3 py-1"
               >
                 Delivered

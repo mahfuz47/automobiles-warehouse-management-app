@@ -10,6 +10,7 @@ import SocialLogin from "../../../Shared/SocialLogin/SocialLogin";
 import { toast, ToastContainer } from "react-toastify";
 import logo from "./logo.png";
 import auth from "../../../../firebase.init";
+import Title from "../../../Shared/Title/Title";
 
 const Registration = () => {
   const [user] = useAuthState(auth);
@@ -41,6 +42,7 @@ const Registration = () => {
   };
   return (
     <div>
+      <Title title={"Registration"}></Title>
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <div className="px-8 py-6 mx-4 mt-4 text-left bg-white shadow-lg md:w-1/3 lg:w-1/3 sm:w-1/3">
           <div className="flex justify-center py-3">

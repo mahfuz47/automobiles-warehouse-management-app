@@ -10,10 +10,9 @@ import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 import userImage from "../../images/userImage.png";
 const navigation = [
-  { name: "Inventory", to: "/inventory" },
   { name: "Manage", to: "/manage" },
-  { name: "Add", to: "/addItems" },
   { name: "My Items", to: "/myItems" },
+  { name: "Add", to: "/addItems" },
   { name: "Blogs", to: "/blogs" },
 ];
 function classNames(...classes) {

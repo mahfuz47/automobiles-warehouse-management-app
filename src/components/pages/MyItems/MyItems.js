@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Title from "../../Shared/Title/Title";
 
 const MyItems = () => {
   const [addedItems, setAddedItems] = useState([]);
@@ -25,6 +26,7 @@ const MyItems = () => {
   };
   return (
     <div>
+      <Title title={"My Items"}></Title>
       <div className="text-center">
         <h1 className="text-3xl font-bold text-indigo-600 font-mono ">
           MY ITEMS
