@@ -10,9 +10,10 @@ import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 import userImage from "../../images/userImage.png";
 const navigation = [
+  { name: "Inventory", to: "/inventory" },
   { name: "Manage", to: "/manage" },
-  { name: "My Items", to: "/myItems" },
   { name: "Add", to: "/addItems" },
+  { name: "My Items", to: "/myItems" },
   { name: "Blogs", to: "/blogs" },
 ];
 function classNames(...classes) {
@@ -63,22 +64,53 @@ const Navbar = () => {
                   </div>
                   <div className="hidden sm:block sm:ml-6">
                     <div className="flex space-x-4">
-                      {navigation.map((item) => (
+                      {user ? (
                         <CustomLink
-                          key={item.name}
-                          to={item.to}
-                          className={classNames(
-                            item.current
-                              ? "bg-gray-900 text-white"
-                              : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                            "px-3 py-2 rounded-md text-sm font-medium"
-                          )}
-                          //   aria-current={item.current ? "page" : undefined}
+                          className="bg-gray-800 rounded-xl hover:bg-gray-600 text-gray-300 px-3 py-2"
+                          to="/manage"
                           aria-current="page"
                         >
-                          {item.name}
+                          Manage
                         </CustomLink>
-                      ))}
+                      ) : (
+                        ""
+                      )}
+                      {user ? (
+                        <CustomLink
+                          className="bg-gray-800 rounded-xl text-gray-300 hover:bg-gray-600 px-3 py-2"
+                          to="/addItems"
+                          aria-current="page"
+                        >
+                          Add
+                        </CustomLink>
+                      ) : (
+                        ""
+                      )}
+                      {user ? (
+                        <CustomLink
+                          className="bg-gray-800 rounded-xl text-gray-300 hover:bg-gray-600 px-3 py-2"
+                          to="/myItems"
+                          aria-current="page"
+                        >
+                          My Item
+                        </CustomLink>
+                      ) : (
+                        ""
+                      )}
+                      <CustomLink
+                        className="bg-gray-800 rounded-xl text-gray-300 hover:bg-gray-600 px-3 py-2"
+                        to=""
+                        aria-current="page"
+                      >
+                        Blogs
+                      </CustomLink>
+                      <CustomLink
+                        className="bg-gray-800 rounded-xl text-gray-300 hover:bg-gray-600 px-3 py-2"
+                        to="/countries"
+                        aria-current="page"
+                      >
+                        Countries
+                      </CustomLink>
                     </div>
                   </div>
                 </div>

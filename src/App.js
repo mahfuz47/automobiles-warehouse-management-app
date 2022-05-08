@@ -10,6 +10,7 @@ import Manage from "./components/pages/Manage/Manage";
 import MyItems from "./components/pages/MyItems/MyItems";
 import PageNotFound from "./components/pages/PageNotFound/PageNotFound";
 import UpdateItem from "./components/pages/UpdateItem/UpdateItem";
+import Countries from "./components/Shared/Countries/Countries";
 import Footer from "./components/Shared/Footer/Footer";
 import Header from "./components/Shared/Header/Header";
 import RequireAuth from "./components/Shared/RequireAuth/RequireAuth";
@@ -47,6 +48,8 @@ function App() {
         ></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/countries" element={<Countries></Countries>}></Route>
+
         <Route
           path="/cars/:carsId"
           element={
