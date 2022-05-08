@@ -3,260 +3,220 @@
     "price": "3,745,300",
     "carName": "Toyota Avalon",
     "image": "https://www.motortrend.com/uploads/2022/02/2022_Toyota_Avalon_Touring_0011.jpg?fit=around%7C770:481.254",
-    "performance": {
-      "engineName": "EV6 3.5 Liter",
-      "trim": "XLE Sedan",
-      "horsePower": "301@6,600",
-      "Torque": "267@4,700",
-      "cylinders": 6,
-      "quantity": 23
-    }
+    "engineName": "EV6 3.5 Liter",
+    "trim": "XLE Sedan",
+    "horsePower": "301@6,600",
+    "Torque": "267@4,700",
+    "cylinders": 6,
+    "quantity": 23
   },
   {
     "price": "3,182,000",
     "carName": "Toyota Camry Hybrid",
     "image": "https://www.motortrend.com/uploads/2021/12/2022_Toyota_Camry_XSE_Hybrid_003.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "4-Cyl 2.5 Liter",
-      "trim": "LE Sedan",
-      "horsePower": "208@5,700",
-      "Torque": "163@5,200",
-      "cylinders": 4,
-      "quantity": 25
-    }
+    "engineName": "4-Cyl 2.5 Liter",
+    "trim": "LE Sedan",
+    "horsePower": "208@5,700",
+    "Torque": "163@5,200",
+    "cylinders": 4,
+    "quantity": 25
   },
   {
     "price": "3,945,300",
     "carName": "Toyota Venza",
     "image": "https://www.motortrend.com/uploads/2022/02/2022_Toyota_Venza_XLE_004.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "4-Cyl 2.5 Liter",
-      "trim": "LE Hybrid",
-      "horsePower": "219@5,700",
-      "Torque": "163@5,200",
-      "cylinders": 4,
-      "quantity": 22
-    }
+    "engineName": "4-Cyl 2.5 Liter",
+    "trim": "LE Hybrid",
+    "horsePower": "219@5,700",
+    "Torque": "163@5,200",
+    "cylinders": 4,
+    "quantity": 22
   },
   {
     "price": "3,125,300",
     "carName": "Toyota Corolla",
     "image": "https://www.motortrend.com/uploads/sites/5/2019/02/2020-Toyota-Corolla-LE-Hybrid-in-Blue-Crush-Metallic-1.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "4-Cyl 1.8 Liter",
-      "trim": "L Sedan",
-      "horsePower": "139@6,100",
-      "Torque": "126@3,900",
-      "cylinders": 4,
-      "quantity": 25
-    }
+    "engineName": "4-Cyl 1.8 Liter",
+    "trim": "L Sedan",
+    "horsePower": "139@6,100",
+    "Torque": "126@3,900",
+    "cylinders": 4,
+    "quantity": 25
   },
   {
     "price": "3,245,300",
     "carName": "Mitsubishi Outlander",
     "image": "https://www.motortrend.com/uploads/sites/5/2021/02/2022-Mitsubishi-Outlander-4.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "4-Cyl 2.5 Liter",
-      "trim": "ES FWD",
-      "horsePower": "181@6,000",
-      "Torque": "181@3,600",
-      "cylinders": 4,
-      "quantity": 26
-    }
+    "engineName": "4-Cyl 2.5 Liter",
+    "trim": "ES FWD",
+    "horsePower": "181@6,000",
+    "Torque": "181@3,600",
+    "cylinders": 4,
+    "quantity": 26
   },
   {
     "price": "4,105,300",
     "carName": "Honda Passport",
     "image": "https://www.motortrend.com/uploads/2021/09/01-2022-Honda-Passport-TrailSport.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "V6 3.5 Liter",
-      "trim": "EX-L 2WD",
-      "horsePower": "280@6,000",
-      "Torque": "262@4,700",
-      "cylinders": 6,
-      "quantity": 25
-    }
+    "engineName": "V6 3.5 Liter",
+    "trim": "EX-L 2WD",
+    "horsePower": "280@6,000",
+    "Torque": "262@4,700",
+    "cylinders": 6,
+    "quantity": 25
   },
   {
     "price": "30,045,300",
     "carName": "Honda Civic",
     "image": "https://www.motortrend.com/uploads/sites/5/2020/07/2020-Honda-Civic-Si-HPT-Sedan-7.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": " 4-Cyl 2.0 Liter",
-      "trim": "LX (Auto) Sedan",
-      "horsePower": "158@6,500",
-      "Torque": "138@4,200",
-      "cylinders": 4,
-      "quantity": 22
-    }
+    "engineName": " 4-Cyl 2.0 Liter",
+    "trim": "LX (Auto) Sedan",
+    "horsePower": "158@6,500",
+    "Torque": "138@4,200",
+    "cylinders": 4,
+    "quantity": 22
   },
   {
     "price": "3,945,300",
     "carName": "Honda Ridgeline",
     "image": "https://www.motortrend.com/uploads/sites/5/2019/11/2019-Ford-Ranger-Lariat-10.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "V6 3.5 Liter",
-      "trim": "Sport AWD",
-      "horsePower": "280@6,000",
-      "Torque": "262@4,700",
-      "cylinders": 6,
-      "quantity": 27
-    }
+    "engineName": "V6 3.5 Liter",
+    "trim": "Sport AWD",
+    "horsePower": "280@6,000",
+    "Torque": "262@4,700",
+    "cylinders": 6,
+    "quantity": 27
   },
   {
     "price": "3,145,300",
     "carName": "Mazda CX-30",
     "image": "https://www.motortrend.com/uploads/sites/5/2020/08/2020-Mazda-CX-3-1.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "4-Cyl 2.5 Liter SKYACTIV-G",
-      "trim": "S FWD",
-      "horsePower": "186@6,000",
-      "Torque": "186@4,000",
-      "cylinders": 4,
-      "quantity": 22
-    }
+    "engineName": "4-Cyl 2.5 Liter SKYACTIV-G",
+    "trim": "S FWD",
+    "horsePower": "186@6,000",
+    "Torque": "186@4,000",
+    "cylinders": 4,
+    "quantity": 22
   },
   {
     "price": "2,905,300",
     "carName": "Chevrolet Trailblazer",
     "image": "https://www.motortrend.com/uploads/sites/10/2021/07/2022-chevrolet-trailblazer-lt-suv-angular-front.png?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "3-Cyl Turbo 1.2 Liter EcoTec",
-      "trim": "LS FWD",
-      "horsePower": "137@5,000",
-      "Torque": "162@2,500",
-      "cylinders": 3,
-      "quantity": 24
-    }
+    "engineName": "3-Cyl Turbo 1.2 Liter EcoTec",
+    "trim": "LS FWD",
+    "horsePower": "137@5,000",
+    "Torque": "162@2,500",
+    "cylinders": 3,
+    "quantity": 24
   },
   {
     "price": "3,405,300",
     "carName": "Chevrolet Equinox",
     "image": "https://www.motortrend.com/uploads/sites/10/2021/10/2022-chevrolet-equinox-lt-suv-front-view.png?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "4-Cyl Turbo 1.5 Liter",
-      "trim": "LS FWD",
-      "horsePower": "170@5,600",
-      "Torque": "203@2,000",
-      "cylinders": 4,
-      "quantity": 23
-    }
+    "engineName": "4-Cyl Turbo 1.5 Liter",
+    "trim": "LS FWD",
+    "horsePower": "170@5,600",
+    "Torque": "203@2,000",
+    "cylinders": 4,
+    "quantity": 23
   },
   {
     "price": "2,605,300",
     "carName": "Chevrolet Colorado",
     "image": "https://www.motortrend.com/uploads/sites/10/2019/10/2020-chevrolet-colorado-wt-ext-cab-pick-up-angular-front.png?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "4-Cyl 2.5 Liter",
-      "trim": "Base 2WD Extended Cab",
-      "horsePower": "200@6,300",
-      "Torque": "191@4,400",
-      "cylinders": 4,
-      "quantity": 35
-    }
+    "engineName": "4-Cyl 2.5 Liter",
+    "trim": "Base 2WD Extended Cab",
+    "horsePower": "200@6,300",
+    "Torque": "191@4,400",
+    "cylinders": 4,
+    "quantity": 35
   },
   {
     "price": "3,345,300",
     "carName": "Chevrolet Blazer",
     "image": "https://www.motortrend.com/uploads/2022/02/2023-Chevrolet-Blazer-RS-002.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "EV6 4.5 Liter",
-      "trim": "L FWD",
-      "horsePower": "209@6,600",
-      "Torque": "250@4,700",
-      "cylinders": 4,
-      "quantity": 27
-    }
+    "engineName": "EV6 4.5 Liter",
+    "trim": "L FWD",
+    "horsePower": "209@6,600",
+    "Torque": "250@4,700",
+    "cylinders": 4,
+    "quantity": 27
   },
   {
     "price": "5,945,300",
     "carName": "Ford Expedition",
     "image": "https://www.motortrend.com/uploads/2021/09/2022-Ford-Expedition-62.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "V6 Turbo 3.5 Liter EcoBoost®",
-      "trim": "STX 2WD",
-      "horsePower": "380@5,000",
-      "Torque": "470@2,250",
-      "cylinders": 6,
-      "quantity": 14
-    }
+    "engineName": "V6 Turbo 3.5 Liter EcoBoost®",
+    "trim": "STX 2WD",
+    "horsePower": "380@5,000",
+    "Torque": "470@2,250",
+    "cylinders": 6,
+    "quantity": 14
   },
   {
     "price": "3,245,300",
     "carName": "Ford Bronco",
     "image": "https://www.motortrend.com/uploads/sites/5/2021/02/2022-Hyundai-Ioniq-5-12.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "4-Cyl Turbo 2.3 Liter EcoBoost®",
-      "trim": "2-Door Base",
-      "horsePower": "275",
-      "Torque": "315",
-      "cylinders": 4,
-      "quantity": 35
-    }
+    "engineName": "4-Cyl Turbo 2.3 Liter EcoBoost®",
+    "trim": "2-Door Base",
+    "horsePower": "275",
+    "Torque": "315",
+    "cylinders": 4,
+    "quantity": 35
   },
   {
     "price": "5,145,300",
     "carName": "Ford E-Transit",
     "image": "https://www.motortrend.com/uploads/2021/12/2022_Ford-E-Transit_02.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "Single Electric",
-      "trim": "350 w/130 WB Low Roof Cargo Van",
-      "horsePower": "266",
-      "Torque": "317",
-      "cylinders": 4,
-      "quantity": 16
-    }
+    "engineName": "Single Electric",
+    "trim": "350 w/130 WB Low Roof Cargo Van",
+    "horsePower": "266",
+    "Torque": "317",
+    "cylinders": 4,
+    "quantity": 16
   },
   {
     "price": "3,100,300",
     "carName": "Ford Mustang",
     "image": "https://www.motortrend.com/uploads/sites/11/2019/09/2020-Ford-Mustang-2.3-Liter-High-Performance-Package-1742.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "4-Cyl Turbo 2.3 Liter EcoBoost®",
-      "trim": "EcoBoost Coupe",
-      "horsePower": "310@5,500",
-      "Torque": "350@3,000",
-      "cylinders": 4,
-      "quantity": 38
-    }
+    "engineName": "4-Cyl Turbo 2.3 Liter EcoBoost®",
+    "trim": "EcoBoost Coupe",
+    "horsePower": "310@5,500",
+    "Torque": "350@3,000",
+    "cylinders": 4,
+    "quantity": 38
   },
   {
     "price": "2,945,300",
     "carName": "Nissan Rogue",
     "image": "https://www.motortrend.com/uploads/sites/5/2019/01/2019-Nissan-Rogue-SV-AWD-front-three-quarter-in-motion.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": " 4-Cyl 2.5 Liter",
-      "trim": "S 2WD",
-      "horsePower": "170@6,000",
-      "Torque": "175@4,400",
-      "cylinders": 4,
-      "quantity": 12
-    }
+    "engineName": " 4-Cyl 2.5 Liter",
+    "trim": "S 2WD",
+    "horsePower": "170@6,000",
+    "Torque": "175@4,400",
+    "cylinders": 4,
+    "quantity": 12
   },
   {
     "price": "4,605,300",
     "carName": "Jaguar XE",
     "image": "https://www.motortrend.com/uploads/sites/5/2019/11/2020-Jaguar-XE-front-three-quarter-1.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "4-Cyl Turbo 2.0 Liter",
-      "trim": "25t S Sedan",
-      "horsePower": "247@5,500",
-      "Torque": "269@1,300",
-      "cylinders": 4,
-      "quantity": 35
-    }
+    "engineName": "4-Cyl Turbo 2.0 Liter",
+    "trim": "25t S Sedan",
+    "horsePower": "247@5,500",
+    "Torque": "269@1,300",
+    "cylinders": 4,
+    "quantity": 35
   },
   {
     "price": "5,145,300",
-    "carName": "Toyota Avalon",
+    "carName": "Jaguar Exterior",
     "image": "https://www.motortrend.com/uploads/sites/5/2021/05/2021-jaguar-xf-exterior-01.jpg?fit=around%7C681:425.625",
-    "performance": {
-      "engineName": "4-Cyl Turbo 2.0 Liter",
-      "trim": "P250 S Sedan",
-      "horsePower": "247@5,500",
-      "Torque": "269@1,200",
-      "cylinders": 4,
-      "quantity": 24
-    }
+    "engineName": "4-Cyl Turbo 2.0 Liter",
+    "trim": "P250 S Sedan",
+    "horsePower": "247@5,500",
+    "Torque": "269@1,200",
+    "cylinders": 4,
+    "quantity": 24
   }
 ]

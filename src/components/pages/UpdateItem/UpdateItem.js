@@ -29,7 +29,7 @@ const UpdateItem = () => {
   // const handleQuantityPlus = () => {};
 
   const handleQuantityPlus = () => {
-    let quantityData = carDetails.performance.quantity;
+    let quantityData = carDetails.quantity;
     setQuantity(quantityData);
     const plus = parseInt(quantity) + 1;
     console.log(plus);
@@ -85,13 +85,13 @@ const UpdateItem = () => {
                 <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <dt className="text-sm font-medium text-gray-500">Engine</dt>
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {carDetails?.performance?.engineName}
+                    {carDetails?.engineName}
                   </dd>
                 </div>
                 <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <dt className="text-sm font-medium text-gray-500">Trim</dt>
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {carDetails?.performance?.trim}
+                    {carDetails?.trim}
                   </dd>
                 </div>
                 <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -99,13 +99,13 @@ const UpdateItem = () => {
                     Horse Power
                   </dt>
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {carDetails?.performance?.horsePower}
+                    {carDetails?.horsePower}
                   </dd>
                 </div>
                 <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                   <dt className="text-sm font-medium text-gray-500">Torque</dt>
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {carDetails?.performance?.Torque}
+                    {carDetails?.Torque}
                   </dd>
                 </div>
                 <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -113,7 +113,7 @@ const UpdateItem = () => {
                     Cylinders
                   </dt>
                   <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                    {carDetails?.performance?.cylinders}
+                    {carDetails?.cylinders}
                   </dd>
                 </div>
               </dl>

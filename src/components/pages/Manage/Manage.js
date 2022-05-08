@@ -1,22 +1,22 @@
 import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+// import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
-import auth from "../../../firebase.init";
+// import { toast, ToastContainer } from "react-toastify";
+// import auth from "../../../firebase.init";
 
 import useCars from "../../../Hooks/useCars";
 import "./Manage.css";
 
 const Manage = () => {
-  const [user] = useAuthState(auth);
+  // const [user] = useAuthState(auth);
   const [cars, setCars] = useCars();
   const navigate = useNavigate();
 
-  if (user) {
-    toast("Login Successful");
-  } else {
-    toast("Please Login");
-  }
+  // if (user) {
+  //   toast("Login Successful");
+  // } else {
+  //   toast("Please Login");
+  // }
   const navigateTocarDetails = (id) => {
     navigate(`/cars/${id}`);
   };
@@ -54,7 +54,7 @@ const Manage = () => {
               />
             </td>
             <td>{car.carName}</td>
-            <td className="text-center">{car?.performance?.quantity}</td>
+            <td className="text-center">{car?.quantity}</td>
             <td className="px-0">
               <div className="flex justify-evenly">
                 <button
@@ -76,7 +76,15 @@ const Manage = () => {
           </tr>
         ))}
       </table>
-      <ToastContainer />
+      <div className="text-center py-8">
+        <button
+          onClick={() => navigate("/addItems")}
+          className="bg-indigo-600 hover:bg-indigo-700 rounded-xl px-3 py-1 text-white font-bold"
+        >
+          ADD NEW ITEM
+        </button>
+      </div>
+      {/* <ToastContainer /> */}
     </div>
   );
 };
