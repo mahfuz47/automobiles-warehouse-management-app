@@ -1,5 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 const Banner = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative bg-gray-200 py-24 overflow-hidden">
       <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
@@ -13,13 +15,22 @@ const Banner = () => {
               <span className="text-4xl text-gray-800">WAREHOUSE...</span>
             </h1>
             <div className="flex space-x-4 my-6">
-              <button className="py-1 px-3 bg-indigo-400 hover:bg-indigo-600 rounded-xl">
+              <button
+                onClick={() => navigate("/login")}
+                className="py-1 px-3 bg-indigo-400 hover:bg-indigo-600 rounded-xl"
+              >
                 Login
               </button>
-              <button className="py-1 px-3 bg-indigo-400 hover:bg-indigo-600 rounded-xl">
+              <button
+                onClick={() => navigate("/registration")}
+                className="py-1 px-3 bg-indigo-400 hover:bg-indigo-600 rounded-xl"
+              >
                 sign up
               </button>
-              <button className="py-1 px-3 bg-indigo-400 hover:bg-indigo-600 rounded-xl">
+              <button
+                onClick={() => navigate("/inventory")}
+                className="py-1 px-3 bg-indigo-400 hover:bg-indigo-600 rounded-xl"
+              >
                 Get Started
               </button>
             </div>
