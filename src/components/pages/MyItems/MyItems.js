@@ -4,7 +4,7 @@ import Title from "../../Shared/Title/Title";
 const MyItems = () => {
   const [addedItems, setAddedItems] = useState([]);
   useEffect(() => {
-    const url = `https://floating-fortress-93057.herokuapp.com/addItems`;
+    const url = `https://automobile-warehouse-app-server.onrender.com/addItems`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAddedItems(data));
@@ -12,7 +12,7 @@ const MyItems = () => {
   const handleDeleteItmes = (id) => {
     const proceedDelete = window.confirm("Are you sure to delete?");
     if (proceedDelete) {
-      const url = `https://floating-fortress-93057.herokuapp.com/addItems/${id}`;
+      const url = `https://automobile-warehouse-app-server.onrender.com/addItems/${id}`;
       fetch(url, {
         method: "DELETE",
       })

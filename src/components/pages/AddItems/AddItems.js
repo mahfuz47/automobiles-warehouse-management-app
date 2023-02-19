@@ -26,7 +26,7 @@ const AddItems = () => {
       horsePower,
     };
 
-    fetch("https://floating-fortress-93057.herokuapp.com/addItems", {
+    fetch("https://automobile-warehouse-app-server.onrender.com/addItems", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

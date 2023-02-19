@@ -16,7 +16,7 @@ const Manage = () => {
   const handleDeleteCars = (id) => {
     const proceedDelete = window.confirm("Are you sure to delete?");
     if (proceedDelete) {
-      const url = `https://floating-fortress-93057.herokuapp.com/cars/${id}`;
+      const url = `https://automobile-warehouse-app-server.onrender.com/cars/${id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -7,7 +7,7 @@ const UpdateItem = () => {
   const [carDetails, setCarDetails] = useState({});
 
   useEffect(() => {
-    const url = `https://floating-fortress-93057.herokuapp.com/cars/${carsId}`;
+    const url = `https://automobile-warehouse-app-server.onrender.com/cars/${carsId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCarDetails(data));
