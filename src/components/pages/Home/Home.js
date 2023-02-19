@@ -7,7 +7,7 @@ import Inventory from "../Inventory/Inventory";
 
 const Home = () => {
   return (
-    <div>
+    <div className="h-full">
       <Title title={"Home"}></Title>
       {/* <ToastContainer /> */}
       <Banner></Banner>

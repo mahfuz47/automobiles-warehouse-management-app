@@ -35,16 +35,18 @@ const Cars = () => {
                 {cars.slice(0, 6).map((car) => (
                   <div key={car._id} className="group relative">
                     <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:scale-105 group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                      <img
-                        src={car?.image}
-                        alt={car?.carName}
-                        className="w-full h-full object-center object-cover"
-                        title={car?.carNname}
-                      />
+                      <Link to={`cars/${car._id}`}>
+                        <img
+                          src={car?.image}
+                          alt={car?.carName}
+                          className="w-full h-full object-center object-cover"
+                          title={car?.carNname}
+                        />
+                      </Link>
                     </div>
                     <div className="flex items-center justify-between px-4">
                       <h3 className="mt-6 text-xl font-bold font-mono text-slate-900">
-                        <Link to="/cars/:id">{car?.carName}</Link>
+                        <Link to={`cars/${car._id}`}>{car?.carName}</Link>
                       </h3>
                       <div>
                         <button

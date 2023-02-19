@@ -50,20 +50,20 @@ const Manage = () => {
             <td>{car.carName}</td>
             <td className="text-center">{car?.quantity}</td>
             <td className="px-0">
-              <div className="flex justify-evenly">
+              <div className="grid lg:grid-cols-2 grid-cols-1 gap-3 px-1">
                 <button
                   onClick={() => handleDeleteCars(car._id)}
-                  className="bg-red-500 hover:bg-red-700  rounded-xl px-3 py-1 font-bold"
+                  className="bg-red-500 hover:bg-red-700 lg:text-sm text-xs rounded-lg px-2 py-1 font-bold"
                 >
-                  DELETE
+                  Delete
                 </button>
                 <button
                   onClick={() => {
                     navigateTocarDetails(car._id);
                   }}
-                  className="bg-green-500 rounded-xl px-3 py-1 font-bold hover:bg-green-600 text-white hover:text-black"
+                  className="bg-green-500 rounded-lg px-2 py-1 lg:text-sm text-xs font-bold hover:bg-green-600 text-white hover:text-black"
                 >
-                  UPDATE
+                  Update
                 </button>
               </div>
             </td>

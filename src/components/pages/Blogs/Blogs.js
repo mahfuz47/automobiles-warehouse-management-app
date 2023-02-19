@@ -8,16 +8,16 @@ const Blogs = () => {
       <div>
         <div className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="lg:text-center">
-              <h2 className="text-5xl text-indigo-600  font-bold font-serif">
+            <div className="text-center">
+              <h2 className="lg:text-5xl text-2xl text-indigo-600  font-bold font-serif">
                 Blogs of Questions
               </h2>
             </div>
 
             <div className="mt-10">
-              <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 bg-indigo-100 rounded-xl p-16">
-                <div className="bg-indigo-200 hover:scale-105 p-10 rounded-2xl">
-                  <h1 className="text-2xl font-bold font-serif mb-2">
+              <dl className="bg-indigo-100 grid lg:grid-cols-2 grid-cols-1 rounded-xl gap-5 p-2 lg:p-16">
+                <div className="bg-indigo-200 hover:scale-105 transition-all ease-in-out duration-150 lg:p-10 p-2 rounded-xl">
+                  <h1 className="lg:text-2xl text-xl font-bold font-serif mb-2">
                     1. What is the difference between javascript and node js?
                   </h1>
                   <p>
@@ -31,8 +31,8 @@ const Blogs = () => {
                     Oops but it is based on prototype inheritance.
                   </p>
                 </div>
-                <div className="bg-indigo-200 hover:scale-105 p-10 rounded-2xl">
-                  <h1 className="text-2xl font-bold font-serif mb-2">
+                <div className="bg-indigo-200 hover:scale-105 lg:p-10 transition-all ease-in-out duration-150  p-2 rounded-xl">
+                  <h1 className="lg:text-2xl text-xl font-bold font-serif mb-2">
                     2. When should you use node js and when should you use mongo
                     db?
                   </h1>
@@ -47,8 +47,8 @@ const Blogs = () => {
                     with automatic, fast, and instant data recovery.
                   </p>
                 </div>
-                <div className="bg-indigo-200 hover:scale-105 p-10 rounded-2xl">
-                  <h1 className="text-2xl font-bold font-serif mb-2">
+                <div className="bg-indigo-200 hover:scale-105 lg:p-10 transition-all ease-in-out duration-150  p-2 rounded-xl">
+                  <h1 className="lg:text-2xl text-xl font-bold font-serif mb-2">
                     3. What is the difference between sql and no sql database?
                   </h1>
                   <p>
@@ -62,8 +62,8 @@ const Blogs = () => {
                     other hand NoSQL databases are horizontally scalable.
                   </p>
                 </div>
-                <div className="bg-indigo-200 hover:scale-105 p-10 rounded-2xl">
-                  <h1 className="text-2xl font-bold font-serif mb-2">
+                <div className="bg-indigo-200 hover:scale-105 lg:p-10 transition-all ease-in-out duration-150  p-2 rounded-xl">
+                  <h1 className="lg:text-2xl text-xl font-bold font-serif mb-2">
                     4. What is the purpose of JWT and how does it work?
                   </h1>
                   <p>

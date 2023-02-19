@@ -49,7 +49,7 @@ const AddItems = () => {
       </div>
       <Title title={"Add"}></Title>
       <div className="flex justify-center">
-        <div className="mt-20 sm:mt-0 w-9/12 ">
+        <div className="mt-20 sm:mt-0 lg:w-9/12 w-11/12">
           <div className="md:grid md:grid-cols-2 md:gap-6">
             <div className="mt-5 md:mt-0 md:col-span-2">
               <form action="#" onSubmit={handleAddCars}>

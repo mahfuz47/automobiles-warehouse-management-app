@@ -1,14 +1,14 @@
 /* This example requires Tailwind CSS v2.0+ */
-import React, { Fragment } from "react";
 import { Disclosure } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
-import { Link } from "react-router-dom";
-import logo from "./logo.png";
-import { useAuthState } from "react-firebase-hooks/auth";
-import CustomLink from "../../../utilities/CustomLink";
-import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
+import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
+import CustomLink from "../../../utilities/CustomLink";
 import userImage from "../../images/userImage.png";
+import logo from "./logo.png";
 const navigation = [
   { name: "Inventory", to: "/inventory" },
   { name: "Manage", to: "/manage" },
@@ -62,7 +62,7 @@ const Navbar = () => {
                       />
                     </Link>
                   </div>
-                  <div className="hidden sm:block sm:ml-6">
+                  <div className="lg:block hidden sm:ml-6">
                     <div className="flex space-x-4">
                       {user ? (
                         <CustomLink
@@ -126,11 +126,15 @@ const Navbar = () => {
                   {/* Profile dropdown */}
 
                   {user ? (
-                    <p className="font-bold text-gray-200 hover:text-gray-400 px-2 cursor-pointer">
+                    <p className="font-bold lg:flex hidden text-gray-200 hover:text-gray-400 px-2 cursor-pointer">
                       {user.displayName}
                     </p>
                   ) : (
-                    <img className="w-5 h-5" src={userImage} alt="" />
+                    <img
+                      className="w-5 h-5 lg:flex hidden"
+                      src={userImage}
+                      alt=""
+                    />
                   )}
                   {user ? (
                     <button
@@ -151,23 +155,24 @@ const Navbar = () => {
               </div>
             </div>
 
-            <Disclosure.Panel className="sm:hidden">
+            <Disclosure.Panel className="lg:hidden block">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className={classNames(
-                      item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                      "block px-3 py-2 rounded-md text-base font-medium"
-                    )}
-                    aria-current={item.current ? "page" : undefined}
-                  >
-                    {item.name}
-                  </Disclosure.Button>
+                  <Link to={item?.to}>
+                    <Disclosure.Button
+                      key={item?.name}
+                      as="a"
+                      className={classNames(
+                        item?.current
+                          ? "bg-gray-900 text-white"
+                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        "block px-3 py-2 rounded-md text-base font-medium"
+                      )}
+                      aria-current={item?.current ? "page" : undefined}
+                    >
+                      {item?.name}
+                    </Disclosure.Button>
+                  </Link>
                 ))}
               </div>
             </Disclosure.Panel>

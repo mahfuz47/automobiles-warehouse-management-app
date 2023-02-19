@@ -29,17 +29,19 @@ const UpdateItem = () => {
   //       setQuantity(data);
   //     });
   // };
-  console.log(carDetails.quantity);
+
   return (
     <div>
       <Title title={"Update"}></Title>
-      <h1>UPDATE :{carDetails._id}</h1>
-      <div className="grid grid-cols-2 items-center space-x-4 gap-y-4">
-        <div className="py-5">
+
+      <div className="grid lg:grid-cols-2 grid-cols-1 items-center space-x-4 gap-y-4">
+        <div className="py-5 px-2">
           <img className="w-full rounded-xl" src={carDetails?.image} alt="" />
           <div className="flex justify-between items-center px-2">
             <div className="flex items-center space-x-3">
-              <p className="text-lg font-bold p-0 m-0">AVAILAVLE QUANTITY:</p>
+              <p className="lg:text-lg text-sm font-bold p-0 m-0">
+                AVAILAVLE QUANTITY:
+              </p>
               <div className=" my-3">
                 <input
                   className="text-center pl-3 w-14 font-bold rounded bg-gray-300 text-gray-700"
@@ -53,7 +55,7 @@ const UpdateItem = () => {
             <div>
               <button
                 // onClick={handleDelivered}
-                className="bg-green-400 hover:bg-green-700 rounded-xl px-3 py-1"
+                className="bg-green-400 hover:bg-green-700 border-0 rounded-lg px-3 py-1"
               >
                 Delivered
               </button>
