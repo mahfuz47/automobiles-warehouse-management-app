@@ -1,19 +1,26 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../../utilities/Loading";
 
 const Cars = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [cars, setCars] = useState([]);
   useEffect(() => {
-    const url = `https://automobile-warehouse-app-server.onrender.com/cars`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
+    async function fetch() {
+      try {
+        setLoading(true);
+        const { data } = await axios.get(
+          "https://automobile-warehouse-app-server.onrender.com/cars"
+        );
         setCars(data);
+      } catch (error) {
+      } finally {
         setLoading(false);
-      });
+      }
+    }
+    fetch();
   }, []);
   const navigateTocarDetails = (id) => {
     navigate(`/cars/${id}`);
@@ -31,10 +38,13 @@ const Cars = () => {
             {loading ? (
               <Loading></Loading>
             ) : (
-              <div className="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6 gap-y-5">
+              <div className="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:gap-y-5 gap-y-3 ">
                 {cars.slice(0, 6).map((car) => (
-                  <div key={car._id} className="group relative">
-                    <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:scale-105 group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+                  <div
+                    key={car._id}
+                    className="group relative shadow pb-4 rounded-lg"
+                  >
+                    <div className="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:scale-95 transition-all ease-in-out duration-200 group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1 ">
                       <Link to={`cars/${car._id}`}>
                         <img
                           src={car?.image}
